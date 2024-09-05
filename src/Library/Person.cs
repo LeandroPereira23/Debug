@@ -42,7 +42,8 @@ namespace Ucu.Poo.Persons
         {
             get
             {
-                return $"{this.Name}{this.FamilyName}";
+                // Agregar un espacio entre el nombre y apellido
+                return $"{this.Name} {this.FamilyName}";
             }
         }
 
@@ -59,7 +60,8 @@ namespace Ucu.Poo.Persons
             get
             {
                 DateTime today = DateTime.Today;
-                int age = this.BirthDate.Year - today.Year;
+                // Invertir los valores de today.Year y this.BirthDate.Year
+                int age = today.Year - this.BirthDate.Year;
 
                 if (today.Month < this.BirthDate.Month || (today.Month == this.BirthDate.Month && today.Day < this.BirthDate.Day))
                 {
